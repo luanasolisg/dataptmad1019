@@ -74,6 +74,10 @@ USUARIO  TTY      DE               LOGIN@   IDLE   JCPU   PCPU WHAT
 luana    :0       :0               18:24   ?xdm?   5:48   0.01s /usr/lib/gdm3/g
 luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy$ pwd
 /home/luana/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy
+luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem$ ls *.txt
+at.txt  lorem.txt  sed.txt
+luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem$ wc -l sed.txt
+8 sed.txt
 
 
 
