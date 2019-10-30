@@ -1,4 +1,3 @@
-Python lab
 from typing import List, Any
 
 import numpy as np
@@ -52,11 +51,14 @@ print(list51)
 
 
 #5. Add a condition to the list comprehension above so that the last value in each subarray is printed, but only if it is less than or equal to 0.5.
-list52 = [y for i in np.array(2: ) for y in i]
+list52 = [c for x in b for y in x for c in y if c <= 0.5]
 print(list52)
+#no se como hacer que solo seleccione el ultimo valor de cada subarray
+
+
 #6. Use a list comprehension to select and print the names of all CSV files in the /data directory.
 
-
+#no tenemos data directori descargado/no se que es
 #7. Use a list comprehension and the Pandas read_csv and concat methods to read all CSV files in the /data directory and combine them into a single data frame. Display the top 10 rows of the resulting data frame.
 
 
