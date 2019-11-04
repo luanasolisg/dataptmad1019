@@ -51,7 +51,7 @@ print(list51)
 
 
 #5. Add a condition to the list comprehension above so that the last value in each subarray is printed, but only if it is less than or equal to 0.5.
-list52 = [c for x in b for y in x for c in y if c <= 0.5]
+list52 = [c for x in b for y in x for c in y if c <= 0.5 if y[-1]]
 print(list52)
 #no se como hacer que solo seleccione el ultimo valor de cada subarray
 
