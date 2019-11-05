@@ -1,83 +1,65 @@
-luana@luana-Lenovo-G50-80:~$ echo "Hello World"
-Hello World
-luana@luana-Lenovo-G50-80:~$ mkdir new_dir
-luana@luana-Lenovo-G50-80:~$ ls
-bcn-feb-2019-prework  Escritorio        IRONHACK    pruebafinal      snap
-Clase2410             examples.desktop  Música      Público          Vídeos
-Descargas             git               new_dir     PycharmProjects
-Documentos            Imágenes          Plantillas  robot.md
-luana@luana-Lenovo-G50-80:~$ rmdir new_dir
-luana@luana-Lenovo-G50-80:~$ ls
-bcn-feb-2019-prework  Escritorio        IRONHACK     Público          Vídeos
-Clase2410             examples.desktop  Música       PycharmProjects
-Descargas             git               Plantillas   robot.md
-Documentos            Imágenes          pruebafinal  snap
-luana@luana-Lenovo-G50-80:~$ cp IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem/sed.txt IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy
-luana@luana-Lenovo-G50-80:~$ cd IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy
-luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy$ ls
-sed.txt
-luana@luana-Lenovo-G50-80:~$ cp IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem/*.txt IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy
-luana@luana-Lenovo-G50-80:~$ cd IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy
-luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy$ ls
-at.txt  lorem.txt  sed.txt
-luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem$ cat sed.txt
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
-Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, 
-sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. 
-Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
-sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, 
-nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
-vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem$ pr -m -t at.txt sed.txt
-At vero eos et accusamus et iusto o Sed ut perspiciatis unde omnis iste
-deleniti atque corrupti quos dolore totam rem aperiam, eaque ipsa quae
-provident, similique sunt in culpa  Nemo enim ipsam voluptatem quia vol
-Et harum quidem rerum facilis est e sed quia consequuntur magni dolores
-Nam libero tempore, cum soluta nobi Neque porro quisquam est, qui dolor
-maxime placeat facere possimus, omn sed quia non numquam eius modi temp
-Temporibus autem quibusdam et aut o Ut enim ad minima veniam, quis nost
-ut et voluptates repudiandae sint e nisi ut aliquid ex ea commodi conse
-Itaque earum rerum hic tenetur a sa vel illum qui dolorem eum fugiat qu
-alias consequatur aut perferendis d
-luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem$ cd ..
-luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master$ cd lorem-copy
-luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy$ head -n3 sed.txt
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
-Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, 
-luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy$ tail -n3 sed.txt
-Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, 
-nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
-vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?luana@luana-Lenovo-m-copy$ ^CRONHACK/dataptmad1019/module-1/lab-bash-master/lorem
-luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy$ nano sed.txt
-luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy$ tail -n3 sed.txt
-vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-Homo homini lupus
+#Print Hello World in console.
+echo "Hello World"
 
-luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy$ sed -i s/et/ET/g at.txt
-luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy$ cat at.txt
-At vero eos ET accusamus ET iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum 
-deleniti atque corrupti quos dolores ET quas molestias excepturi sint occaecati cupiditate non 
-provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum ET dolorum fuga. 
-Et harum quidem rerum facilis est ET expedita distinctio. 
-Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod 
-maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. 
-Temporibus autem quibusdam ET aut officiis debitis aut rerum necessitatibus saepe eveniET 
-ut ET voluptates repudiandae sint ET molestiae non recusandae. 
-Itaque earum rerum hic tenETur a sapiente delectus, ut aut reiciendis voluptatibus maiores 
-alias consequatur aut perferendis doloribus asperiores repellat
-luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy$ w
- 23:36:15 up  5:13,  1 user,  load average: 0,70, 0,40, 0,39
-USUARIO  TTY      DE               LOGIN@   IDLE   JCPU   PCPU WHAT
-luana    :0       :0               18:24   ?xdm?   5:48   0.01s /usr/lib/gdm3/g
-luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy$ pwd
-/home/luana/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy
-luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem$ ls *.txt
-at.txt  lorem.txt  sed.txt
-luana@luana-Lenovo-G50-80:~/IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem$ wc -l sed.txt
-8 sed.txt
+#Create a new folder named new_dir.
+mkdir new_dir
+
+#Delete new_dir folder.
+rmdir new_dir
+
+#Make a copy of sed.txt (located in the lorem folder) to lorem-copy.
+cp IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem/sed.txt IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy
+
+#Copy the rest of the files located in lorem to lorem-copy using only one code line (tip: use ;)
+cp IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem/*.txt IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy
+
+#Locate at lorem folder and show sed.txt content.
+cd IRONHACK/dataptmad1019/module-1/lab-bash-master/lorem-copy
+cat sed.txt
+
+#Locate at lorem folder and show at.txt and lorem.txt content.
+pr -m -t at.txt sed.txt
+
+#Locate at lorem-copy folder and show the first three lines of sed.txt.
+cd ..
+cd lorem-copy
+head -n3 sed.txt
+
+#Locate at lorem-copy folder and show the last three lines of sed.txt.
+tail -n3 sed.txt
+
+#Add Homo homini lupus. at the end of sed.txt located at lorem-copy.
+nano sed.txt
+
+#Locate at lorem-copy folder and show the last three lines of sed.txt. Now you should see Homo homini lupus..
+tail -n3 sed.txt
+
+#Change every et to ET in at.txt located at lorem-copy (tip: use sed).
+sed -i s/et/ET/g at.txt
+
+#Find the active user of the system.
+w
+
+#Find out where are you located within the system.
+pwd
+
+#List all .txt files located at lorem.
+ls *.txt
+
+#Count the number of lines in sed.txt located at lorem.
+wc -l sed.txt
+
+#Count the number of files which name starts with lorem located at the whole lab directory.
+find . -iname "lorem.*" | wc -l
+
+#Find every appearance of et in at.txt located at lorem.
+grep -o -i 'et' at.txt | wc -l
+
+#Find every appearance of the string et in at.txt located at lorem
+grep -o -i et lorem.txt | wc -l
+
+#Find every appearance of the string et located at the whole lab directory.
+grep -r et . | wc -l
 
 
 
