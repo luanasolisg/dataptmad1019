@@ -1,0 +1,76 @@
+SELECT * 
+FROM publishers
+JOIN titles
+ON publishers.pub_id = titles.pub_id;
+
+SELECT publishers.pub_name,
+COUNT(titles.title_id) as total_titles
+from publishers
+JOIN titles
+on publishers.pub_id = titles.pub_id
+GROUP BY publishers.pub_name;
+
+SELECT publishers.pub_name,
+COUNT(titles.title_id) as total_titles
+from publishers
+LEFT JOIN titles
+on publishers.pub_id = titles.pub_id
+GROUP BY publishers.pub_name
+ORDER by total_titles desc;
+
+SELECT publishers.pub_name,
+COUNT(titles.title_id) as total_titles
+from titles
+LEFT JOIN publishers
+on publishers.pub_id = titles.pub_id
+GROUP BY publishers.pub_name
+ORDER by total_titles desc;
+
+SELECT * FROM titles
+INNER JOIN sales on titles.title_id = sales.title_id
+
+select * from jobs;
+
+SELECT * from employee;
+
+SELECT employee.fname, employee.lname, jobs.job_desc
+FROM employee 
+LEFT JOIN jobs on employee.job_id=jobs.job_id
+UNION
+SELECT employee.fname, employee.lname, jobs.job_desc
+FROM jobs 
+LEFT JOIN employee on employee.job_id=jobs.job_id;
+
+WITH
+my_outer_join AS
+(
+SELECT employee.fname, employee.lname, jobs.job_desc
+FROM employee 
+LEFT JOIN jobs on employee.job_id=jobs.job_id
+UNION
+SELECT employee.fname, employee.lname, jobs.job_desc
+FROM jobs 
+LEFT JOIN employee on employee.job_id=jobs.job_id
+)
+SELECT * FROM my_outer_join;
+
+SELECT
+authors.au_id, authors.au_fname, authors.au_lname, titles.title, publishers.pub_name
+FROM titles
+JOIN publishers on titles.pub_id=publishers.pub_id
+JOIN titleauthor on titleauthor.title_id=titles.title_id
+JOIN authors on authors.au_id=titleauthor.au_id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
