@@ -2,18 +2,20 @@
 import numpy as np
 
 #2. Print the NUMPY version and the configuration.
-
+print(np.version.version)
 
 
 #3. Generate a 2x3x5 3-dimensional array with random values. Assign the array to variable "a"
 # Challenge: there are at least three easy ways that use numpy to generate random arrays. How many ways can you find?
 a1 = np.random.random((2,3,5))
-
+import numpy.random
+from numpy.random import random as a3
+a3 = ((2,3,5))
 
 #4. Print a.
 print(a1)
-
-
+print(np.random.random((2,3,5)))
+print(a3)
 
 #5. Create a 5x2x3 3-dimensional array with all values equaling 1.
 #Assign the array to variable "b"
@@ -35,12 +37,13 @@ print(a1.size == b.size)
 
 #9. Transpose b so that it has the same structure of a (i.e. become a 2x3x5 array). Assign the transposed array to varialbe "c".
 
-c = np.transpose(b, (2,3,5))
+c = b.transpose(1,2,0)
+print(c)
 
 
 #10. Try to add a and c. Now it should work. Assign the sum to varialbe "d". But why does it work now?
 
-d = np.add (a1,c)
+d = a1 + c
 
 #11. Print a and d. Notice the difference and relation of the two array in terms of the values? Explain.
 print(d)
@@ -50,17 +53,24 @@ print(d)
 #12. Multiply a and c. Assign the result to e.
 e = np.multiply(a1,c)
 
+print(e)
 
 #13. Does e equal to a? Why or why not?
 
 print(e==a1)
 
-
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
-
+d_max=np.amax(d)
+print(d_max)
+d_min=np.amin(d)
+print(d_min)
+d_mean=np.mean(d)
+print(d_mean)
 
 
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
+f=np.empty((2,3,5))
+
 
 
 
@@ -74,7 +84,23 @@ Assign 100 to the corresponding value(s) in f for d_max in d.
 In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
+list_d = [x for y in d for v in y for x in v]
 
+list_f = []
+for n in list_d:
+    if n==d_mean:
+        list_f.append(50)
+    elif n==d_max:
+        list_f.append(100)
+    elif d_max> n > d_mean:
+        list_f.append(75)
+    elif d_mean> n > d_min:
+        list_f.append(25)
+    elif n==d_min:
+        list_f.append(0)
+f = np.array(list_f).reshape(2,3,5)
+
+print(f)
 
 
 
@@ -112,3 +138,21 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
 """
+list_d = [h for i in d for j in i for h in j]
+
+list_f2 = []
+for r in list_d:
+    if r==d_mean:
+        list_f2.append("A")
+    elif r==d_max:
+        list_f2.append("B")
+    elif d_max> r > d_mean:
+        list_f2.append("C")
+    elif d_mean> r > d_min:
+        list_f2.append("D")
+    elif r==d_min:
+        list_f2.append("E")
+f2 = np.array(list_f2).reshape(2,3,5)
+
+print(f2)
+
