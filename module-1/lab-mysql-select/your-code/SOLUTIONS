@@ -32,18 +32,25 @@ LIMIT 3;
 ./Challenge4./
 
 SELECT
-authors.au_id as AUTHOR_ID, authors.au_fname as FIRST_NAME, authors.au_lname as LAST_NAME, SUM(titles.ytd_sales)
-FROM titles
-LEFT JOIN titleauthor on titleauthor.title_id=titles.title_id
-LEFT JOIN authors on authors.au_id=titleauthor.au_id
-UNION
-SELECT
-authors.au_id as AUTHOR_ID, authors.au_fname as FIRST_NAME, authors.au_lname as LAST_NAME, SUM(titles.ytd_sales)
-FROM titleauthor
+authors.au_id as AUTHOR_ID, authors.au_fname as FIRST_NAME, authors.au_lname as LAST_NAME, COALESCE(SUM(titles.ytd_sales),0)
+FROM authors
+LEFT JOIN titleauthor on authors.au_id=titleauthor.au_id
 LEFT JOIN titles on titleauthor.title_id=titles.title_id
-LEFT JOIN authors on authors.au_id=titleauthor.au_id
 group by AUTHOR_ID, LAST_NAME, FIRST_NAME
 ORDER BY SUM(titles.ytd_sales) DESC;
+
+./Challenge5./
+
+SELECT
+authors.au_id as AUTHOR_ID, authors.au_fname as FIRST_NAME, authors.au_lname as LAST_NAME, SUM(titles.advance + titles.royalty) as PROFIT
+FROM titles
+JOIN titleauthor on titleauthor.title_id=titles.title_id
+JOIN authors on authors.au_id=titleauthor.au_id
+group by AUTHOR_ID, LAST_NAME, FIRST_NAME
+ORDER BY PROFIT DESC
+LIMIT 3;
+
+
 
 
 
